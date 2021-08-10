@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.muhammed.weatherapp.databinding.FragmentHomeBinding
@@ -30,8 +31,8 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val homeViewModel: HomeViewModel by viewModels()
-    var lat = ""
-    var lon = ""
+    var latiude = ""
+    var longitude = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -79,14 +80,19 @@ class HomeFragment : Fragment() {
     private fun obtieneLocalizacion() {
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location: Location? ->
-                lat = location?.latitude.toString()
-                lon = location?.longitude.toString()
-                homeViewModel.lat = lat
-                homeViewModel.lon = lon
+                latiude = location?.latitude.toString()
+                longitude = location?.longitude.toString()
+                homeViewModel.latt = latiude
+                homeViewModel.lonn = longitude
+
+
+
                 Log.d(TAG, "latiude85: ${location?.latitude}")
                 Log.d(TAG, "longitude86: ${location?.longitude}")
-                Log.d(TAG, "longitude87: ${lat}")
-                Log.d(TAG, "longitude88: ${lon}")
+                Log.d(TAG, "longitude87: ${latiude}")
+                Log.d(TAG, "longitude88: ${longitude}")
+                Log.d(TAG, "obtieneLocalizacion: ${homeViewModel.latt}")
+                Log.d(TAG, "obtieneLocalizacion: ${homeViewModel.lonn} ")
 
             }
     }
