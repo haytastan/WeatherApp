@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+        <variable
+            name="homeData"
+            type="com.muhammed.weatherapp.ui.view.fragment.HomeItemViewState" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300sp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+
+                ></ImageView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{homeData.name}"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_margin="10dp"
+                    android:textSize="30sp">
+
+                </TextView>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="dsadsada"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"></androidx.appcompat.widget.AppCompatTextView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="sadasd"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="80sp"></androidx.appcompat.widget.AppCompatTextView>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
