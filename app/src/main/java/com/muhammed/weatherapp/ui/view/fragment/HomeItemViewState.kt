@@ -4,13 +4,15 @@ import com.muhammed.weatherapp.data.model.WeatherModel
 
 data class HomeItemViewState(val weatherModel: WeatherModel) {
 
-    fun getDescription() = weatherModel.weather?.description
-
     fun getName() = weatherModel.name
 
-    fun getTemp() = weatherModel.main?.temp
+    fun getHeat() = weatherModel.main.temp.toString()
 
-    fun getMinTemp() = weatherModel.main?.temp_min
+    fun getHumidity() = weatherModel.main.humidity.toString()
 
-    fun getMaxTemp() = weatherModel.main?.temp_max
+    fun getWind() = weatherModel.wind.speed.toString()
+
+    fun getVisibility() = weatherModel.visibility.toString() + " KM"
+
+    fun getFeelsLike() = weatherModel.main.feels_like.toString()
 }

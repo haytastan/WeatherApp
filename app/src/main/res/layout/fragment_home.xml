@@ -3,67 +3,221 @@
 
 
     <data>
+
         <variable
             name="homeData"
             type="com.muhammed.weatherapp.ui.view.fragment.HomeItemViewState" />
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_day"></ImageView>
 
-            >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Hava Durumu"
+            android:textColor="@color/textName"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"></TextView>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300sp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/transparan">
 
-                ></ImageView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="Wednesday, 29 July"
+                    android:textColor="@color/textName"
+                    android:textSize="12sp"
+                    android:textStyle="normal"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@{homeData.name}"
+                    android:textColor="@color/textName"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic"></TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@{homeData.heat}"
+                    android:textColor="@color/textName"
+                    android:textSize="62sp"
+                    android:textStyle="bold"></TextView>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="290dp"
+            android:layout_marginRight="25dp"
+            android:backgroundTint="@color/transparan">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{homeData.name}"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:layout_margin="10dp"
-                    android:textSize="30sp">
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Humidity"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="normal"></TextView>
 
-                </TextView>
-
-
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="dsadsada"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="30sp"></androidx.appcompat.widget.AppCompatTextView>
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{homeData.humidity}"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="normal"></TextView>
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="sadasd"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/black"
-                    android:textSize="80sp"></androidx.appcompat.widget.AppCompatTextView>
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white"></View>
             </LinearLayout>
-        </RelativeLayout>
-    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Visibility"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="normal"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{homeData.visibility}"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="normal"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Wind"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="normal"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{homeData.wind}"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="normal"></TextView>
+
+                <View
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white"></View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Real Feel"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="normal"></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{homeData.feelsLike}"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="normal"></TextView>
+            </LinearLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/icon_weather_day_cloudy"></com.google.android.material.imageview.ShapeableImageView>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
 </layout>
